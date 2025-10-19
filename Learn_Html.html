@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shatech: The Ultimate HTML Reference</title>
+    
+    <style>
+        /* Basic Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        /* 1. Layout with CSS Grid */
+        .content-wrapper {
+            display: grid;
+            /* Defines a grid with a fixed-width sidebar (250px) and a flexible main content area */
+            grid-template-columns: 250px 1fr; 
+            max-width: 1200px;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 2. Header and Footer Styling */
+        .site-header {
+            background: linear-gradient(to right, #2c3e50, #3498db);
+            color: #fff;
+            padding: 20px 40px;
+            text-align: center;
+        }
+
+        .site-header h1 {
+            font-size: 2.5em;
+            margin-bottom: 5px;
+        }
+
+        .site-header p {
+            margin-bottom: 0;
+        }
+
+        .site-footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            margin-top: 20px;
+        }
+
+        /* 3. Sidebar Navigation Styling */
+        .sidebar {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+        }
+
+        .sidebar h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+        }
+
+        #tag-list {
+            list-style: none;
+        }
+
+        #tag-list a {
+            display: block;
+            padding: 8px 0;
+            color: #333;
+            text-decoration: none;
+            transition: background-color 0.2s;
+            border-radius: 4px;
+            padding-left: 10px;
+        }
+
+        #tag-list a:hover {
+            background-color: #dce1e5;
+            color: #2c3e50;
+        }
+
+        /* 4. Main Content Styling */
+        .main-content {
+            padding: 40px;
+            background-color: #fff;
+        }
+
+        #tag-details h2 {
+            color: #3498db;
+            margin-bottom: 15px;
+            font-size: 2em;
+        }
+
+        #tag-details h3 {
+            color: #2c3e50;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
+        }
+
+        .code-example {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Courier New', monospace;
+        }
+        
+        /* Preformatted text inside the code block */
+        .code-example code {
+            display: block;
+            white-space: pre-wrap; /* Ensures code wraps on smaller screens */
+        }
+
+        .live-output {
+            padding: 20px;
+            border: 2px dashed #e74c3c;
+            margin: 20px 0;
+            background-color: #fff3f3;
+        }
+
+        /* Dialog Styling (Latest Feature) */
+        #my-dialog {
+            border: 1px solid #2c3e50;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        #my-dialog::backdrop {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        button {
+            padding: 10px 15px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Media Query for smaller screens */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                grid-template-columns: 1fr; /* Stack sidebar and main content */
+            }
+
+            .sidebar {
+                border-right: none;
+                border-bottom: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <h1>Shatech: The Ultimate HTML Reference 📚</h1>
+        <p>A comprehensive guide to all HTML tags and features (Old, New, and Latest).</p>
+    </header>
+
+    <div class="content-wrapper">
+        <nav class="sidebar">
+            <h2>HTML Features</h2>
+            <ul id="tag-list">
+                <li class="nav-item" data-tag="p"><a href="#">Basic Tag: &lt;p&gt;</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <section id="tag-details">
+                <article class="welcome-message">
+                    <h2>Welcome to Shatech HTML Hub!</h2>
+                    <p>Select a tag from the left-hand navigation to view its full documentation, code examples, and live implementation.</p>
+
+                    <hr>
+                    <h3>✨ Latest HTML5 Feature Showcase: The &lt;dialog&gt; Element</h3>
+                    <p>The native dialog element allows you to create modal windows easily without complex JavaScript or CSS hacks.</p>
+                    
+                    <div class="example-container">
+                        <button id="show-dialog-btn">Open Native Dialog</button>
+                        <dialog id="my-dialog">
+                            <p>This is a native HTML &lt;dialog&gt; element. No external CSS needed for basic modal functionality!</p>
+                            <button id="close-dialog-btn">Close</button>
+                        </dialog>
+                    </div>
+
+                    <hr>
+                    <h3>📜 Semantic HTML: &lt;article&gt; and &lt;section&gt;</h3>
+                    <article style="border: 1px solid #ccc; padding: 15px;">
+                        <h4>&lt;article&gt; Example: Independent Content</h4>
+                        <p>This content is self-contained and distributable, like a forum post or a news story.</p>
+                    </article>
+                </article>
+            </section>
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Shatech HTML Reference. Built with HTML, CSS, and Vanilla JS.</p>
+    </footer>
+
+    <script>
+        // Data structure to hold documentation for all HTML tags.
+        // This is the core data for the "learn and implement all concepts" goal.
+        const htmlTagsData = [
+            // ----------------------------------------------------
+            // OLD/BASIC FEATURE
+            // ----------------------------------------------------
+            {
+                tag: 'p',
+                name: '&lt;p&gt; (Paragraph)',
+                type: 'Basic Tag',
+                description: 'The standard tag for defining a paragraph of text. It automatically includes spacing above and below the content, governed by user agent stylesheets.',
+                exampleCode: '<p>This is a paragraph of text.</p>\n<p>It helps organize content into readable blocks.</p>',
+                liveOutput: '<p>This is a paragraph of text.</p><p>It helps organize content into readable blocks.</p>',
+                keyFeature: 'Fundamental text block element.'
+            },
+            
+            // ----------------------------------------------------
+            // SEMANTIC HTML5 FEATURE (NEWER)
+            // ----------------------------------------------------
+            {
+                tag: 'main',
+                name: '&lt;main&gt; (Main Content)',
+                type: 'Semantic HTML5',
+                description: 'Represents the dominant content of the <body> of a document. There should only be one <main> element per document, and it should not be a descendant of an <article>, <aside>, <footer>, <header>, or <nav> element.',
+                exampleCode: '<header>...</header>\n<main>\n  <h1>Page Title</h1>\n  <section>...</section>\n</main>\n<footer>...</footer>',
+                liveOutput: '<h2>Role: Defines the primary content area of the page.</h2>',
+                keyFeature: 'Improves accessibility and SEO by marking the most important content.'
+            },
+
+            // ----------------------------------------------------
+            // LATEST HTML FEATURE
+            // ----------------------------------------------------
+            {
+                tag: 'details',
+                name: '&lt;details&gt; &amp; &lt;summary&gt; (Disclosure Widget)',
+                type: 'Latest Feature',
+                description: 'Creates a disclosure widget from which the user can retrieve additional information. The <summary> element is used as the visible title for the disclosure widget.',
+                exampleCode: '<details>\n  <summary>Click to see more about HTML5</summary>\n  <p>HTML5 is the latest major revision of the language.</p>\n</details>',
+                liveOutput: `
+                    <details style="border: 1px solid #1abc9c; padding: 10px;">
+                      <summary style="font-weight: bold; cursor: pointer; color: #1abc9c;">Click to see more about HTML5</summary>
+                      <p>HTML5 is the latest major revision of the language, introducing new elements like &lt;video&gt;, &lt;audio&gt;, and semantic tags.</p>
+                    </details>
+                `,
+                keyFeature: 'Native collapsible content (accordion) without JavaScript.'
+            },
+            
+            // ----------------------------------------------------
+            // FORMS/INPUT FEATURE
+            // ----------------------------------------------------
+            {
+                tag: 'input-color',
+                name: '&lt;input type="color"&gt; (Color Picker)',
+                type: 'Forms & Input',
+                description: 'An input type that allows the user to specify a color, either by using a visual color picker interface or by entering the color string in a text field.',
+                exampleCode: '<label for="favcolor">Select your favorite color:</label>\n<input type="color" id="favcolor" value="#e74c3c">',
+                liveOutput: `
+                    <label for="favcolor-live">Select your favorite color:</label>
+                    <input type="color" id="favcolor-live" value="#3498db" style="width: 100px; height: 30px;">
+                `,
+                keyFeature: 'Provides a native color selection interface.'
+            }
+        ];
+
+        // --- DOM Element References ---
+        const tagList = document.getElementById('tag-list');
+        const tagDetailsSection = document.getElementById('tag-details');
+
+        // --- Helper Functions ---
+
+        /**
+         * Renders the full documentation for a selected tag.
+         * @param {object} data - The tag object from htmlTagsData.
+         */
+        function renderTagDetails(data) {
+            const htmlContent = `
+                <h2>${data.name}</h2>
+                <p><strong>Category:</strong> ${data.type}</p>
+                <hr>
+                
+                <h3>📖 Description</h3>
+                <p>${data.description}</p>
+                <p><strong>Key Feature:</strong> ${data.keyFeature}</p>
+
+                <h3>💻 Code Example</h3>
+                <pre class="code-example"><code>${data.exampleCode}</code></pre>
+
+                <h3>👁️ Live Output</h3>
+                <div class="live-output">
+                    ${data.liveOutput}
+                </div>
+            `;
+            tagDetailsSection.innerHTML = htmlContent;
+        }
+
+        /**
+         * Initializes the application: populates the sidebar navigation.
+         */
+        function initializeApp() {
+            // 1. Clear existing list items (only the default one is there)
+            tagList.innerHTML = ''; 
+
+            // 2. Populate the sidebar with tags from the data array
+            htmlTagsData.forEach(tagData => {
+                const li = document.createElement('li');
+                li.className = 'nav-item';
+                // Use a data attribute to store the tag for easy lookup
+                li.dataset.tag = tagData.tag; 
+                
+                const a = document.createElement('a');
+                a.href = '#';
+                a.textContent = `${tagData.type}: ${tagData.name}`;
+
+                // Event listener to handle clicks
+                a.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // Find the correct tag data based on the data attribute
+                    const selectedTag = htmlTagsData.find(t => t.tag === tagData.tag);
+                    if (selectedTag) {
+                        renderTagDetails(selectedTag);
+                    }
+                });
+                
+                li.appendChild(a);
+                tagList.appendChild(li);
+            });
+        }
+
+        // --- Latest Feature: Dialog Element Logic ---
+        const dialog = document.getElementById('my-dialog');
+        const showDialogBtn = document.getElementById('show-dialog-btn');
+        const closeDialogBtn = document.getElementById('close-dialog-btn');
+
+        if (showDialogBtn && dialog) {
+            showDialogBtn.addEventListener('click', () => {
+                // .showModal() ensures the dialog is modal (blocks interaction with the rest of the page)
+                dialog.showModal(); 
+            });
+        }
+
+        if (closeDialogBtn && dialog) {
+            closeDialogBtn.addEventListener('click', () => {
+                dialog.close();
+            });
+        }
+
+
+        // --- Start the application ---
+        initializeApp();
+    </script>
+</body>
+</html>

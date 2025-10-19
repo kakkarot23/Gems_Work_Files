@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admission - My College</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Admission Form</h1>
+    </header>
+
+    <form id="admissionForm">
+        <label>Full Name:</label>
+        <input type="text" id="name" required>
+
+        <label>Email:</label>
+        <input type="email" id="email" required>
+
+        <label>Course Interested:</label>
+        <select id="course">
+      <option>B.Tech Computer Science</option>
+      <option>B.Tech AI & ML</option>
+      <option>B.Tech Civil Engineering</option>
+      <option>BBA</option>
+    </select>
+
+        <label>Phone:</label>
+        <input type="text" id="phone" required>
+
+        <button type="submit">Submit Application</button>
+    </form>
+
+    <p id="response"></p>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

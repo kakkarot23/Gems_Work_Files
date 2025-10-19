@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance - My College</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Student Attendance</h1>
+    </header>
+
+    <table id="attendanceTable">
+        <tr>
+            <th>Student Name</th>
+            <th>Course</th>
+            <th>Attendance %</th>
+        </tr>
+    </table>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+        const students = [{
+            name: "Rahul Sharma",
+            course: "AI & ML",
+            attendance: "96%"
+        }, {
+            name: "Sneha Nair",
+            course: "Computer Science",
+            attendance: "89%"
+        }, {
+            name: "Aman Gupta",
+            course: "Civil",
+            attendance: "91%"
+        }];
+
+        const table = document.getElementById("attendanceTable");
+        students.forEach(s => {
+            const row = `<tr><td>${s.name}</td><td>${s.course}</td><td>${s.attendance}</td></tr>`;
+            table.innerHTML += row;
+        });
+    </script>
+</body>
+
+</html>
